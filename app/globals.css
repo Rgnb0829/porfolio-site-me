@@ -1,0 +1,276 @@
+@import "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap";
+@import "tailwindcss";
+@import "tw-animate-css";
+
+.font-serif {
+  font-family: 'Newsreader', Georgia, serif;
+}
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F5F2ED;
+    color: #1A1A1A;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #F5F2ED;
+    color: #1A1A1A;
+  }
+
+  /* Smooth theme transition */
+  html, body, header, nav, main, footer, section, div, article, button, input, select, textarea {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  }
+}
+
+/* Midnight Dark Mode Overrides */
+html[data-theme='dark'] {
+  background-color: #0F0F11 !important;
+  color: #F5F2ED !important;
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] body {
+  background-color: #0F0F11 !important;
+  color: #F5F2ED !important;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0F0F11;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #2E2E34;
+}
+
+html[data-theme='dark'] .bg-\[\#F5F2ED\] {
+  background-color: #0F0F11 !important;
+}
+
+html[data-theme='dark'] .bg-\[\#EBE7E0\] {
+  background-color: #17171A !important;
+}
+
+html[data-theme='dark'] .bg-\[\#F5F2ED\]\/50 {
+  background-color: rgba(23, 23, 26, 0.5) !important;
+}
+
+html[data-theme='dark'] .bg-\[\#F5F2ED\]\/10 {
+  background-color: rgba(245, 242, 237, 0.08) !important;
+}
+
+html[data-theme='dark'] .border-\[\#D1CECA\] {
+  border-color: #2E2E34 !important;
+}
+
+html[data-theme='dark'] .border-\[\#D1CECA\]\/60 {
+  border-color: rgba(46, 46, 52, 0.6) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\] {
+  color: #F5F2ED !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/90 {
+  color: rgba(245, 242, 237, 0.9) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/80 {
+  color: rgba(245, 242, 237, 0.8) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/75 {
+  color: rgba(245, 242, 237, 0.75) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/70 {
+  color: rgba(245, 242, 237, 0.7) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/60 {
+  color: rgba(245, 242, 237, 0.6) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/50 {
+  color: rgba(245, 242, 237, 0.5) !important;
+}
+
+html[data-theme='dark'] .text-\[\#1A1A1A\]\/40 {
+  color: rgba(245, 242, 237, 0.4) !important;
+}
+
+html[data-theme='dark'] .bg-\[\#1A1A1A\] {
+  background-color: #1A1A1E !important;
+  border-color: #38383F !important;
+}
+
+html[data-theme='dark'] .hover\:bg-\[\#333333\]:hover {
+  background-color: #28282E !important;
+}
+
+html[data-theme='dark'] .border-\[\#1A1A1A\] {
+  border-color: #38383F !important;
+}
+
+html[data-theme='dark'] .hover\:border-\[\#1A1A1A\]:hover {
+  border-color: #F5F2ED !important;
+}
+
+/* Custom Scrollbar for Editorial Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1CECA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B0ACA6;
+}
+
+/* ==========================================================================
+   Print Specific Media Queries (PDF Resume & Portfolio Printing)
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm 12mm 15mm;
+}
+
+@media print {
+  /* Enforce exact print colors and clear backgrounds */
+  *,
+  *::before,
+  *::after {
+    background-color: transparent !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide interactive, non-printable UI elements */
+  #main-navbar,
+  header.fixed,
+  nav.fixed,
+  #custom-cursor,
+  [data-cursor],
+  .no-print,
+  [data-no-print],
+  button,
+  input[type="range"],
+  input[type="submit"],
+  .theme-toggle,
+  .lang-toggle,
+  #roi-calculator-controls,
+  #contact-submit-btn,
+  #scroll-to-top-btn {
+    display: none !important;
+  }
+
+  /* Structural page flow & page-break controls */
+  header,
+  main,
+  footer,
+  section,
+  article,
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  section {
+    padding-top: 18pt !important;
+    padding-bottom: 18pt !important;
+    border-bottom: 1pt solid #D1CECA !important;
+    break-inside: auto;
+  }
+
+  /* Prevent awkward page break cuts across cards and content blocks */
+  article,
+  blockquote,
+  .case-study-item,
+  .career-item,
+  .principle-item,
+  .service-card,
+  .stat-card,
+  tr,
+  li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Keep headings with their following content */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Clean up borders and backgrounds for paper/PDF */
+  .border-\[\#D1CECA\],
+  .border-\[\#1A1A1A\],
+  .border-\[\#F5F2ED\]\/20 {
+    border-color: #CCCCCC !important;
+  }
+
+  .bg-\[\#1A1A1A\],
+  .bg-\[\#0F0F11\],
+  .bg-\[\#EBE7E0\] {
+    background-color: #F8F7F5 !important;
+    border: 1pt solid #E0DED9 !important;
+  }
+
+  /* Hero Section Print Styling (Executive Resume Header) */
+  #hero-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Render links clearly with readable styling */
+  a {
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+
+  /* Footer print adjustments */
+  footer {
+    border-top: 1.5pt solid #111111 !important;
+    padding-top: 14pt !important;
+    padding-bottom: 0 !important;
+    background-color: transparent !important;
+  }
+
+  /* Display print-only elements */
+  .print-only {
+    display: block !important;
+  }
+}
+
